@@ -32,12 +32,16 @@ console.log(listaN);
 
 // utilizzo setTimeout per far passare 30 s
 setTimeout(function () {
-    // console.log("ciao");
     
     // creo ciclo for per generare 5 prompt
     for (var i = 0; i < 5; i++) {
         var inputUte = parseInt(prompt("inserisci il numero memorizzato"));
         listaU.push(inputUte);
+
+        // controllo
+        if (listaN.includes(inputUte)) { 
+        console.log("bravo! il numero " + inputUte + " e' presente"); // stampa se l'utente ha inserito un numero presente 
+        }
     }
     console.log(listaU);
 
