@@ -2,13 +2,14 @@
 // Dopo 30 secondi l’utente deve inserire, un prompt alla volta, i numeri che ha visto precedentemente.
 // Una volta inseriti i 5 numeri, il software dice quanti e quali numeri sono stati ricordati.
 
-var inputUte;
+var n, inputUte;
 var listaN = [], listaU = [];
 var controllo = true;
+var punti = 0;
 
-// creo ciclo for per generare 5 alert che contengono un n randomico
+// creo ciclo for per generare 5 n randomici
 for (var i = 0; i < 5; i++) {
-    var n = Math.floor(Math.random() * 100) + 1;
+    n = Math.floor(Math.random() * 100) + 1;
 
     // controllo
     while (controllo) {
@@ -23,8 +24,8 @@ for (var i = 0; i < 5; i++) {
     }
 
     controllo = true;
-    alert("Simon dice: " + n);
 }
+alert("Simon dice: " + listaN);
 console.log(listaN);
 
 
@@ -54,11 +55,14 @@ setTimeout(function () {
         // controllo
         if (listaN.includes(inputUte)) {
             console.log("bravo! il numero " + inputUte + " e' presente"); // stampa se il numero dell'utente compare nel array
+            punti++;
         } else {
             console.log("mi dispiace! il numero " + inputUte + " non e' presente"); // stampa che non e' presente
         }
     }
     console.log(listaU);
 
+    // punteggio
+    console.log("il tuo punteggio è: ", punti, "/", 5);
 
 }, 3000);
